@@ -1,0 +1,32 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "siri style app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmoss215/liri-node-app.git"
+  },
+  "keywords": [
+    "liri",
+    "node",
+    "twitter",
+    "spotify",
+    "movies"
+  ],
+  "author": "dan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmoss215/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/dmoss215/liri-node-app#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "node-spotify-api": "^1.0.7",
+    "request": "^2.83.0",
+    "twitter": "^1.7.1"
+  }
+}

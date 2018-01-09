@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).done(function(response) {
+          console.log(response);
+          // Creates a div to hold the movie
+        //   $('<div>').text(movie);
+        //   // Retrieves the Rating Data
+        //   // let rating = response.Rated;
+        //   // Creates an element to have the rating displayed
+        //   let rating = $('<div>').text(response.Rated);
+        //   // Displays the rating
+        //   $('#movies-view').append(rating);
+        //   // Retrieves the release year
+        //   // Creates an element to hold the release year
+        //   let releaseYear = $('<div>').text(response.Year);
+        //   // Displays the release year
+        //   $('#movies-view').append(releaseYear);
+        //   // Retrieves the plot
+        //   let plot = $('<div>').text(response.Plot);
+        //   // Creates an element to hold the plot
+        //   // Appends the plot
+        //   $('#movies-view').append(plot);
+        //   // Creates an element to hold the image
+        //   let imageSrc = response.Poster;
+        //   let image = $("<img>").attr("src", imageSrc);
+        //   // Appends the image
+        //   $('#movies-view').append(image);
+          // Puts the entire Movie above the previous movies.
+        });
+    </script>
+</body>
+</html>
