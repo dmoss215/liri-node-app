@@ -3,11 +3,10 @@ var keys = require('./keys.js');
 var Twitter = require('twitter');
 var Spotify = require('node-spotify-api');
 var request = require('request');
+var fs = require('fs');
 
 var command = process.argv[2];
 var searchQuery = process.argv[3];
-var searchQuery2 = process.argv[4];
-var searchQuery3 = process.argv[5];
 var client = new Twitter(keys.twitter);
 var spotify = new Spotify(keys.spotify);
 
@@ -37,7 +36,10 @@ function spotifySong() {
     }
     var firstResult = data.tracks.items[0];
     // console.log(data.tracks.items[0]);
-    console.log(firstResult.album.artists[0].name);
+    console.log("Artist Name: " + firstResult.album.artists[0].name);
+    console.log("Song Name: " + searchQuery);
+    console.log("Album: " + firstResult.album.name);
+    console.log("Preview Link: " + firstResult.album.href);
   });
 }
 
@@ -45,7 +47,7 @@ function movieThis() {
   request(movieSearch, function (error, response, body) {
     var jsonMovieResponse = JSON.parse(body);
     let movieTitle = jsonMovieResponse.Title;
-    console.log(jsonMovieResponse);
+    // console.log(jsonMovieResponse);
     console.log("Movie Title: " + movieTitle);
     console.log("Movie Year: " + jsonMovieResponse.Year);
     console.log("IMDB Rating: " + jsonMovieResponse.Ratings[0].Value);
@@ -58,6 +60,19 @@ function movieThis() {
     // console.log('body:', body); // Print the HTML for the Google homepage.
   });
 }
+
+function doWhat(param) { 
+  fs.readFile("random.txt", "utf8", function(error, data) {
+    // If the code experiences any errors it will log the error to the console.
+    if (error) {
+      return console.log(error);
+    }
+    console.log(data);
+    var dataArr = data.split(",");
+    // We will then re-display the content as an array for later use.
+    console.log(dataArr);
+  });
+ }
 
 switch (command) {
   case "my-tweets":
